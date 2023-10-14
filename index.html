@@ -1,0 +1,59 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Random Number Game</title>
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: rgb(255, 255, 255);
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+ </style>
+</head>
+<body>
+ <h1>Random Number Game</h1>
+ <p>Guess the random number between 1 and 10000.</p>
+ <input type="number" id="guess">
+ <button onclick="checkGuess()">Check Guess</button>
+ <p id="result"></p>
+
+ <script>
+    function checkGuess() {
+      var guess = document.getElementById("guess").value;
+      var randomNum = Math.floor(Math.random() * 10000) + 1;
+
+      if (guess == randomNum) {
+        document.getElementById("result").innerHTML = "Correct!";
+      } else {
+        document.getElementById("result").innerHTML = "Incorrect. The correct number was " + randomNum;
+      }
+    }
+ </script>
+</body>
+</html>
